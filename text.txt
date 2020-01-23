@@ -1,0 +1,114 @@
+Microsoft Windows [Version 10.0.18362.535]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\Ashutosh>http http://127.0.0.1:8000/ash/
+HTTP/1.1 200 OK
+Content-Length: 63
+Content-Type: text/html; charset=utf-8
+Date: Sun, 05 Jan 2020 18:09:35 GMT
+Server: WSGIServer/0.2 CPython/3.7.4
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+<h1>employee no:100employee name:ashu employee salary:1000</h1>
+
+
+C:\Users\Ashutosh>http http://127.0.0.1:8000/ash1/
+HTTP/1.1 200 OK
+Content-Length: 47
+Content-Type: application/json
+Date: Sun, 05 Jan 2020 18:09:43 GMT
+Server: WSGIServer/0.2 CPython/3.7.4
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+{
+    "ename": "ashutosh",
+    "eno": 200,
+    "esal": 1000
+}
+
+
+C:\Users\Ashutosh>http http://127.0.0.1:8000/ash2/
+HTTP/1.1 200 OK
+Content-Length: 42
+Content-Type: application/json
+Date: Sun, 05 Jan 2020 18:12:58 GMT
+Server: WSGIServer/0.2 CPython/3.7.4
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+{
+    "ename": "ash",
+    "eno": 300,
+    "esal": 1000
+}
+
+
+C:\Users\Ashutosh>http http://127.0.0.1:8000/ash/
+
+C:\Users\Ashutosh>d:
+
+D:\>cd djangonew1
+
+D:\djangonew1>cd clsproject
+
+D:\djangonew1\clsproject>cd drf1
+
+D:\djangonew1\clsproject\drf1>pip install requests
+Requirement already satisfied: requests in c:\users\ashutosh\appdata\local\programs\python\python37-32\lib\site-packages (2.22.0)
+Requirement already satisfied: chardet<3.1.0,>=3.0.2 in c:\users\ashutosh\appdata\local\programs\python\python37-32\lib\site-packages (from requests) (3.0.4)
+Requirement already satisfied: idna<2.9,>=2.5 in c:\users\ashutosh\appdata\local\programs\python\python37-32\lib\site-packages (from requests) (2.8)
+Requirement already satisfied: certifi>=2017.4.17 in c:\users\ashutosh\appdata\local\programs\python\python37-32\lib\site-packages (from requests) (2019.11.28)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in c:\users\ashutosh\appdata\local\programs\python\python37-32\lib\site-packages (from requests) (1.25.7)
+
+D:\djangonew1\clsproject\drf1>python test.py
+
+D:\djangonew1\clsproject\drf1>py test.py
+{'eno': 200, 'ename': 'ashutosh', 'esal': 1000}
+##################################################
+
+D:\djangonew1\clsproject\drf1>py test.py
+{'eno': 200, 'ename': 'ashutosh', 'esal': 1000}
+##################################################
+Traceback (most recent call last):
+  File "test.py", line 8, in <module>
+    print ('emp no:',data['no'])
+KeyError: 'no'
+
+D:\djangonew1\clsproject\drf1>py test.py
+{'eno': 200, 'ename': 'ashutosh', 'esal': 1000}
+##################################################
+emp no: 200
+emp name: ashutosh
+emp sal: 1000
+
+D:\djangonew1\clsproject\drf1>py test.py
+{'eno': 300, 'ename': 'ash', 'esal': 1000}
+##################################################
+emp no: 300
+emp name: ash
+emp sal: 1000
+
+D:\djangonew1\clsproject\drf1>py test.py
+Traceback (most recent call last):
+  File "test.py", line 5, in <module>
+    data=resp.json()
+  File "C:\Users\Ashutosh\AppData\Local\Programs\Python\Python37-32\lib\site-packages\requests\models.py", line 897, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "C:\Users\Ashutosh\AppData\Local\Programs\Python\Python37-32\lib\site-packages\simplejson\__init__.py", line 525, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\Ashutosh\AppData\Local\Programs\Python\Python37-32\lib\site-packages\simplejson\decoder.py", line 370, in decode
+    obj, end = self.raw_decode(s)
+  File "C:\Users\Ashutosh\AppData\Local\Programs\Python\Python37-32\lib\site-packages\simplejson\decoder.py", line 400, in raw_decode
+    return self.scan_once(s, idx=_w(s, idx).end())
+simplejson.errors.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+D:\djangonew1\clsproject\drf1>py test.py
+{'eno': 200, 'ename': 'ashutosh', 'esal': 1000}
+##################################################
+emp no: 200
+emp name: ashutosh
+emp sal: 1000
+
+D:\djangonew1\clsproject\drf1>
